@@ -1,5 +1,3 @@
-//https://stackoverflow.com/questions/76502316/function-that-receives-a-function-and-a-default-parameters-key-value-object-an
-
 function add(a,b) { return a + b; }
 
 const defaultMethod = (function () { // Create a closure for `registry`
@@ -13,8 +11,6 @@ const defaultMethod = (function () { // Create a closure for `registry`
               .slice(funcStr.indexOf('(') + 1, funcStr.indexOf(')'))
               .match(/([^\s,]+)/g) || [];
         }
-
-        console.log("parameters are:", ...requiredArgs);
       
         const decoratedFunc = function (...args) {
             let calledArgs = args;
@@ -27,8 +23,11 @@ const defaultMethod = (function () { // Create a closure for `registry`
       
             return func(...calledArgs);
         };
+
         // Register the function we are about to return
         registry.set(decoratedFunc, requiredArgs);
         return decoratedFunc;
     };
 })();
+
+module.exports = { add, defaultMethod }

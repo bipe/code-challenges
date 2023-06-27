@@ -20,7 +20,7 @@ describe('When calling defaultMethod twice', () => {
   var add_ = defaultMethod(add, { b: 9 }); // set b default value as 9
   add_ = defaultMethod(add_, { b: 3, a: 2 }); // now, set b default value as 3 and a as 2
 
-  it.only('should return 13', () => {
+  it('should return 13', () => {
     expect(add_(10)).toBe(13); //10 (received) + 3 (default)
   });
 

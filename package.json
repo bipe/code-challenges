@@ -1,0 +1,14 @@
+{
+  "name": "code-challenges",
+  "version": "1.0.0",
+  "description": "real life coding exercises that I've faced on interviews",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "bipe",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
