@@ -1,11 +1,11 @@
 <template>
   <div class="list-challenge">
     <h1>Unique List Challenge</h1>
-    <input data-testid="item-input" v-model="input" @keydown.enter="addItem" />
+    <input data-testid="item-input" v-model="input" v-on:keydown.enter="addItem" />
     <div class="buttons-container">
-      <button data-testid="add-button" @click="addItem">Add Item</button>
-      <button data-testid="remove-button" @click="removeItem">Remove Item</button>
-      <button data-testid="clear-button" @click="clearItems">Clear Items</button>
+      <button data-testid="add-button" v-on:click="addItem">Add Item</button>
+      <button data-testid="remove-button" v-on:click="removeItem">Remove Item</button>
+      <button data-testid="clear-button" v-on:click="clearItems">Clear Items</button>
     </div>
     <ul data-testid="items">
       <li v-for="item in items" :key="item">{{ item }}</li>
